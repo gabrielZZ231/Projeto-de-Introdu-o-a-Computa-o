@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="redirect">Redirecting...</div>
+  </body>
+  <script>
+    setTimeout(() => {
+      const userLogin = localStorage.getItem("userLogin");
+      /**
+       * Verifica se o usuário está logado
+       * @type {{user: string, loggedIn: boolean, expiration: string}}
+       */
+      const user = JSON.parse(userLogin);
+
+      if (user?.loggedIn) {
+        location.href = "./pages/home.html";
+        return;
+      }
+
+      location.href = "./pages/login.html";
+    }, 1000);
+  </script>
+</html>

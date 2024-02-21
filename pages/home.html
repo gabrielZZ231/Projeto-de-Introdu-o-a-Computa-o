@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard de Vendas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/home.css" />
+    <script src="../scripts/home.js" defer></script>
+  </head>
+  <body onload="checkLogin()">
+    <div class="container">
+      <div class="sidebar-home">
+        <header class="headers-home sidebar-header">
+          <div class="icon-site-container">
+            <p class="icon-site-letter">A</p>
+          </div>
+          <h3>Anota Venda</h3>
+        </header>
+        <div class="home-main__menu__user">
+          <div class="home-main__menu__user__placeholder__image"></div>
+          <p>admin@admin.com</p>
+        </div>
+        <nav class="side-menu">
+          <ul>
+            <li><a href="#">DASHBOARD</a></li>
+            <li><a href="#">ANOTA VENDA</a></li>
+            <li><a href="#">PRODUTO</a></li>
+            <li><a href="#">USUÁRIO</a></li>
+            <li><a onclick="logout()">DESLOGAR</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container-header">
+        <header class="headers-home main-header">
+          <img id="toggleButton" src="../assets/menu.svg" alt="" />
+          <img
+            id="logoutButton"
+            onclick="logout()"
+            src="../assets/logout.svg"
+            alt=""
+          />
+        </header>
+        <div class="home-main__menu">
+          <div class="container-home">
+            <div class="main-home">
+              <h2>DASHBOARD</h2>
+              <div
+                style="
+                  height: 5rem;
+                  border-radius: 0.25rem;
+                  background-color: #6f42c1;
+                  display: flex;
+                  align-items: center;
+                  column-gap: 1rem;
+                "
+              >
+                <p style="color: aliceblue">Periodo</p>
+                <form>
+                  <div>
+                    <input type="date" id="diaa" name="diaa" />
+                  </div>
+                </form>
+                <form>
+                  <div>
+                    <input type="date" id="diaa" name="diaa" />
+                  </div>
+                </form>
+                <button class="search-button"></button>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 4rem;
+                  align-items: center;
+                  justify-content: center;
+                  margin-top: 1rem;
+                "
+              >
+                <div class="grid">
+                  <div class="grid-item blue-card">
+                    <b>0</b>
+                    <p>Quantidade de Vendas Cartão + Dinheiro</p>
+                  </div>
+                  <div class="grid-item green-card">
+                    <b>0</b>
+                    <p>Quantidade de Vendas Cartão</p>
+                  </div>
+                  <div class="grid-item purple-card">
+                    <b>0</b>
+                    <p>Quantidade de Vendas Dinheiro</p>
+                  </div>
+                  <div class="grid-item blue-card">
+                    <b>R$ 0,00</b>
+                    <p>Total Cartão + Dinheiro</p>
+                  </div>
+                  <div class="grid-item green-card">
+                    <b>R$ 0,00</b>
+                    <p>Total Cartão</p>
+                  </div>
+                  <div class="grid-item purple-card">
+                    <b>R$ 0,00</b>
+                    <p>Total Dinheiro</p>
+                  </div>
+                </div>
+              </div>
+              <footer style="position: absolute; bottom: 0">
+                Desenvolvedor
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
